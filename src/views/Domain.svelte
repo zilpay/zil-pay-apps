@@ -1,14 +1,13 @@
 <script>
-	import { link } from 'svelte-spa-router'
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		console.log('dasdsa');
+	});
 </script>
 
 <main>
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-
-	<div>
-		<a use:link={'/domain'}>domain</a>
-		<a use:link={'/sig'}>Sig</a>
-	</div>
 </main>
 
 <style lang="scss">
@@ -17,10 +16,18 @@
 		padding: 1em;
 		max-width: 240px;
 		margin: 0 auto;
+	}
 
-		& > div {
-			display: flex;
-			flex-direction: column;
+	h1 {
+		color: #ff3e00;
+		text-transform: uppercase;
+		font-size: 4em;
+		font-weight: 100;
+	}
+
+	@media (min-width: 640px) {
+		main {
+			max-width: none;
 		}
 	}
 </style>
